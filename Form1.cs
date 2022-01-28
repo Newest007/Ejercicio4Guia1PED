@@ -21,6 +21,10 @@ namespace Ejercicio4Guía4
         private int x;
         private int y;
         private Posicion objposicion, limitex, limitey;
+        private int limitX; 
+        private int limitY;
+
+        
 
         public Form1()
         {
@@ -28,29 +32,38 @@ namespace Ejercicio4Guía4
             x = 50;
             y = 50;
             objposicion = Posicion.abajo;
+
+            /*
             limitex = (Posicion)Convert.ToInt16(value: Size.Width);
             limitey = (Posicion)Convert.ToInt16(value: Size.Height);
+
+            limitX = Convert.ToInt32(limitex);
+            limitY = Convert.ToInt32(limitey);
+            */
+
+            limitX = 516;
+            limitY = 266;
+
         }
 
         private void timermov_Tick(object sender, EventArgs e)
         {
-            if (objposicion == Posicion.derecha)
+            if (objposicion == Posicion.derecha && x <= limitX)
             { x += 10; }
 
-            else if (objposicion == Posicion.izquierda)
+            else if (objposicion == Posicion.izquierda && x > 0)
             { x -= 10; }
 
-            else if (objposicion == Posicion.arriba)
+            else if (objposicion == Posicion.arriba && y > 0)
             { y -= 10; }
 
-            else if(objposicion == Posicion.abajo)
+            else if (objposicion == Posicion.abajo && y <= limitY) 
             { y += 10; }
 
             /*else if(x.Equals(limitex) || y.Equals(limitey))
             {
                 MessageBox.Show("hola");
             }*/
-
 
             Invalidate();
 
@@ -79,7 +92,6 @@ namespace Ejercicio4Guía4
             {
                 objposicion = Posicion.abajo;
             }
-
 
         }
 
