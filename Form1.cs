@@ -41,8 +41,8 @@ namespace Ejercicio4Guía4
             limitY = Convert.ToInt32(limitey);
             */
 
-            limitX = 516;
-            limitY = 266;
+            limitX = 559;
+            limitY = 289;
 
         }
 
